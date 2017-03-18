@@ -155,7 +155,7 @@ Function main(base As Integer, n As Integer)
         Call main(base, n)
         main = temp
     End If
-    If temp <= 10 Then
+    If temp < 10 Then
         Label1.Caption = Label1.Caption + Chr(48 + temp)
     Else
         Label1.Caption = Label1.Caption + Chr(55 + temp)
