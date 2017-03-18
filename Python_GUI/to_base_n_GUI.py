@@ -48,7 +48,9 @@ class to_base_n():
 		if x >= y:
 			x = x // y
 			self.n_go_base(x,y)
-		if temp < 10:
+		if y <= 10:
+			self.restr.append(chr(temp + ord('0')))
+		elif temp <= 10:
 			self.restr.append(chr(temp + ord('0')))
 		else:
 			self.restr.append(chr(temp + ord('7')))
