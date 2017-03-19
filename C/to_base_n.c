@@ -26,7 +26,7 @@ int to_base_n(int base, int n)
         base = base / n;
         to_base_n(base, n);
     }
-	if(temp < 10)
+    if(temp < 10)
         putchar('0' + temp);
     else
         putchar('7' + temp);
