@@ -1,0 +1,11 @@
+I:\我的移动git、C#在编\to_base_n\to_base_n\bin\Debug\to_base_n.exe.config
+I:\我的移动git、C#在编\to_base_n\to_base_n\obj\Debug\to_base_n.Form1.resources
+I:\我的移动git、C#在编\to_base_n\to_base_n\obj\Debug\to_base_n.Properties.Resources.resources
+I:\我的移动git、C#在编\to_base_n\to_base_n\obj\Debug\to_base_n.csproj.GenerateResource.Cache
+I:\我的移动git、C#在编\to_base_n\to_base_n\bin\Debug\to_base_n.exe
+I:\我的移动git、C#在编\to_base_n\to_base_n\bin\Debug\to_base_n.pdb
+I:\我的移动git、C#在编\to_base_n\to_base_n\obj\Debug\to_base_n.exe
+I:\我的移动git、C#在编\to_base_n\to_base_n\obj\Debug\to_base_n.pdb
+I:\我的移动git\C#在编\to_base_n\to_base_n\bin\Debug\to_base_n.exe.config
+I:\我的移动git\C#在编\to_base_n\to_base_n\obj\Debug\to_base_n.exe
+I:\我的移动git\C#在编\to_base_n\to_base_n\obj\Debug\to_base_n.pdb
