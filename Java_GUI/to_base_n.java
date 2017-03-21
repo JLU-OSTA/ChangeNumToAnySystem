@@ -3,6 +3,8 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class to_base_n extends JFrame{
+
+	private static final long serialVersionUID = 7081334948411216002L;
 	private JTextField text1,text2,text3;
 	private JButton button;
 	private JLabel label1,label2,label3;
@@ -24,6 +26,8 @@ public class to_base_n extends JFrame{
 		container.add(label3);
 		text3 = new JTextField("Waiting input...",20);
 		text3.setEditable(false);
+		text1.setText("0");
+		text2.setText("0");
 		button.addActionListener(new handler());
 		container.add(text3);
 		setSize(400,95);
@@ -33,16 +37,17 @@ public class to_base_n extends JFrame{
 	private class handler implements ActionListener{
 		String str = "";
 		public void actionPerformed(ActionEvent e){
-			int x = Integer.parseInt(text1.getText());
-			int y = Integer.parseInt(text2.getText());
+			
+			double x = Double.parseDouble(text1.getText());
+			double y = Double.parseDouble(text2.getText());
 			str="";
-			go(x,y);
+			go((int)x,(int)y);
 		}
 		public void go(int base,int n){
 			int temp;
-			if(n >= 36)
+			if(base<0||n<=0||n>=36)
 			{
-				text3.setText("The system number is too large!!!");
+				text3.setText("You have input the wrong number!!!");
 				return;
 			}
 			temp = base % n;
