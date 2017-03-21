@@ -42,8 +42,10 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 global str;
 x=get(handles.edit1,'String');
 y=get(handles.edit2,'String');
-x=str2num(x);
-y=str2num(y);
+x=str2double(x);
+x=floor(x);
+y=str2double(y);
+y=floor(y);
 str=[];
 go(x,y,handles);
 print temp;
@@ -52,8 +54,8 @@ xt=set(handles.edit3,'String',str);
 function go(base,n,handles)
 global str;
 temp=0;
-if n>= 36
-    str='The system number is too large!!!';
+if base<0||n<=0||n>=36
+    str='You have input the wrong number!!!';
     return;
 end
 temp=mod(base,n);
