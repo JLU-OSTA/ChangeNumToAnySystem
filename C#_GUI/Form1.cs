@@ -35,20 +35,20 @@ namespace to_base_n
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int x, y;
-            x = int.Parse(textBox1.Text);
-            y = int.Parse(textBox2.Text);
+            double x, y;
+            x = double.Parse(textBox1.Text);
+            y = double.Parse(textBox2.Text);
             str = "";
-            go(x, y);
+            go((int)x, (int)y);
             label4.Text = str;
         }
 
         private void go(int bas, int n)
         {
             int temp;
-            if (n>=36)
+            if (bas<0||n<=0||n>=36)
             {
-                str = "The system number is too large!!!";
+                str = "You have input the wrong number!!!";
                 return;
             }
             temp = bas % n;
