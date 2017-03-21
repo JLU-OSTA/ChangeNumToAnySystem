@@ -1,24 +1,30 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 
 void base_to_n(int base, int n);
 
 int main(void)
 {
-    int x, y;
+    int f=0;
+    double x,y;
     cout << "Please enter base number and system number below (Use space to separate them):\n";
-    cin >> x >> y;
-    base_to_n(x, y);
+    do
+    {
+        f=1;
+        cin >> x >> y;
+        if(x<0||y<=0||floor(x)!=x||floor(y)!=y||y>=36)
+            f=0;
+        if(f==0)
+            cout << "You have input the wrong number, please try again:\n";
+    }
+    while(f==0);
+    base_to_n((int)x, (int)y);
 }
 
 void base_to_n(int base, int n)
 {
     int temp;
-    if(n >= 36)
-    {
-        cout << "The system number is too large!!!";
-        return;
-    }
     temp = base % n;
     if(base >= n)
     {
