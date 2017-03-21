@@ -5,8 +5,8 @@
     printfn "The result is:"
     let rec to_base_n bas n =
         let mutable temp = 0
-        if n >= 36 then 
-            printfn "The system number is too large!!!"
+        if bas<0||n<=0||n>=36 then 
+            printfn "You have input the wrong number!!!"
             ()
         temp <- bas % n
         if bas >= n then
