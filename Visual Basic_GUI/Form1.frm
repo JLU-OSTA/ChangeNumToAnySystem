@@ -31,7 +31,7 @@ Begin VB.Form Form1
       Height          =   490
       Left            =   6120
       TabIndex        =   3
-      Top             =   600
+      Top             =   480
       Width           =   2055
    End
    Begin VB.TextBox Text1 
@@ -47,7 +47,7 @@ Begin VB.Form Form1
       Height          =   490
       Left            =   1800
       TabIndex        =   2
-      Top             =   600
+      Top             =   480
       Width           =   2055
    End
    Begin VB.CommandButton Command1 
@@ -62,7 +62,7 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   6720
+      Left            =   6840
       TabIndex        =   1
       Top             =   1440
       Width           =   1335
@@ -78,10 +78,10 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   2160
+      Left            =   1440
       TabIndex        =   0
       Top             =   1560
-      Width           =   3855
+      Width           =   5295
    End
    Begin VB.Label Label4 
       Alignment       =   2  'Center
@@ -98,7 +98,7 @@ Begin VB.Form Form1
       Height          =   495
       Left            =   4080
       TabIndex        =   6
-      Top             =   720
+      Top             =   600
       Width           =   1935
    End
    Begin VB.Label Label3 
@@ -116,12 +116,12 @@ Begin VB.Form Form1
       Height          =   495
       Left            =   120
       TabIndex        =   5
-      Top             =   720
+      Top             =   600
       Width           =   1575
    End
    Begin VB.Label Label2 
       Alignment       =   2  'Center
-      Caption         =   "Result: "
+      Caption         =   "RESULT: "
       BeginProperty Font 
          Name            =   "ºÚÌå"
          Size            =   12
@@ -132,7 +132,7 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   840
+      Left            =   120
       TabIndex        =   4
       Top             =   1560
       Width           =   1335
@@ -143,10 +143,12 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Function main(base As Integer, n As Integer)
+Function main(base As Double, n As Double)
     Dim temp As Integer
-    If n >= 36 Then
-        Label1.Caption = "The system number is too large!!!"
+    base = Int(base)
+    n = Int(n)
+    If base < 0 Or n >= 36 Or n <= 0 Then
+        Label1.Caption = "Wrong number!!!"
         Exit Function
     End If
     temp = base Mod n
@@ -155,7 +157,7 @@ Function main(base As Integer, n As Integer)
         Call main(base, n)
         main = temp
     End If
-    If temp < 10 Then
+    If temp <= 10 Then
         Label1.Caption = Label1.Caption + Chr(48 + temp)
     Else
         Label1.Caption = Label1.Caption + Chr(55 + temp)
@@ -164,7 +166,7 @@ End Function
 
 Private Sub Command1_Click()
     Label1.Caption = ""
-    If Text1.Text <> "" Then
+    If Text1.Text <> "" And Text2.Text <> "" Then
         Call main(Text1.Text, Text2.Text)
     Else
         Label1.Caption = "No data!!!"
