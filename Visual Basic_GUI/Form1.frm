@@ -1,9 +1,10 @@
 VERSION 5.00
 Begin VB.Form Form1 
+   BorderStyle     =   1  'Fixed Single
    Caption         =   "Form1"
    ClientHeight    =   2415
-   ClientLeft      =   60
-   ClientTop       =   345
+   ClientLeft      =   45
+   ClientTop       =   330
    ClientWidth     =   8340
    BeginProperty Font 
       Name            =   "ºÚÌå"
@@ -15,6 +16,8 @@ Begin VB.Form Form1
       Strikethrough   =   0   'False
    EndProperty
    LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
    ScaleHeight     =   2415
    ScaleWidth      =   8340
    StartUpPosition =   3  '´°¿ÚÈ±Ê¡
@@ -157,7 +160,7 @@ Function main(base As Double, n As Double)
         Call main(base, n)
         main = temp
     End If
-    If temp <= 10 Then
+    If temp < 10 Then
         Label1.Caption = Label1.Caption + Chr(48 + temp)
     Else
         Label1.Caption = Label1.Caption + Chr(55 + temp)
@@ -173,5 +176,3 @@ Private Sub Command1_Click()
     End If
     
 End Sub
-
-
